@@ -1,0 +1,44 @@
+.ske-left-column {
+  background: #E4EEF1;
+  height: calc(100vh - 92px - 70px);
+}
+
+.ske-right-column {
+  background: #fff;
+  height: calc(100vh - 92px - 70px);
+}
+
+.ske-sidebar {
+  height: calc(100vh - 70px);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.ske-sidebar:hover {
+    width: 200px;
+  }
+
+.ske-card {
+  background-color: #fff;
+}
+
+.ske-card__title {
+    color: #223048;
+  }
+
+.ske-card__allocated {
+    right: 20px;
+    bottom: 20px;
+  }
+
+.ske-txt-c-blue {
+  color: #3D9BFF;
+}
+
+.ske-txt-c-lg {
+  color: #8D8383;
+}
+
+.ske-border-blue {
+  border-color: #3D9BFF;
+}

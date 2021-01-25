@@ -1,0 +1,35 @@
+.ske-left-column {
+  background: theme('colors.skeColors.lightBlue');
+  height: calc(100vh - 92px - 70px);
+}
+.ske-right-column {
+  background: theme('colors.white');
+  height: calc(100vh - 92px - 70px);
+}
+.ske-sidebar {
+  height: calc(100vh - 70px);
+  transition: all 0.5s ease;
+  overflow: hidden;
+  &:hover {
+    width: 200px;
+  }
+}
+.ske-card {
+  background-color: theme('colors.white');
+  &__title {
+    color: theme('colors.skeColors.darkBlue');
+  }
+  &__allocated {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+.ske-txt-c-blue {
+  color: theme('colors.skeColors.blue');
+}
+.ske-txt-c-lg {
+  color: theme('colors.skeColors.grey');
+}
+.ske-border-blue {
+  border-color: theme('colors.skeColors.blue');
+}

@@ -3,25 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "apollo-boost": "^0.1.15",
-    "axios": "^0.18.0",
-    "graphql": "^14.7.0",
-    "graphql-tag": "^2.10.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "apollo-boost": "^0.1.15",
+    "autoprefixer": "^10.2.3",
+    "axios": "^0.18.0",
+    "graphql": "^14.7.0",
+    "graphql-tag": "^2.10.4",
+    "moment": "^2.29.1",
+    "postcss": "^8.2.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.2",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "tailwindcss": "1.9"
   },
   "scripts": {
     "bootstrap": "yarn install && yarn server:bootstrap",
     "start": "yarn server:start & react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_ENV=production && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server:bootstrap": "cd ./src/server && yarn install",
-    "server:start": "cd ./src/server && yarn dev"
+    "server:start": "cd ./src/server && yarn dev",
+    "watch:css": "postcss ./src/**/**/*.css --base ./src/ -d ./src/styles -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +45,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.0",
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^4.2.0",
+    "postcss-nested": "^5.0.3"
   }
 }

@@ -1,0 +1,8 @@
+.ske-header {
+  height: 70px;
+  background: theme('colors.skeColors.blue');
+  padding: 0 60px;
+  &-container {
+    height: 100%;
+  }
+}

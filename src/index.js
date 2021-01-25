@@ -3,11 +3,35 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux'
+import { createStore, compose, combineReducers, applyMiddleware } from 'redux'
+import createSagaMiddle from 'redux-saga'
+import jobsReducer from './store/reducers/jobs'
+import resourceReducer from './store/reducers/resource'
+import skeduloSaga from './store/sagas/jobs'
+
+const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose
+
+const rootReducer = combineReducers({
+  jobs: jobsReducer,
+  resource: resourceReducer
+})
+
+const sagaMiddleware = createSagaMiddle()
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(sagaMiddleware))
+)
+
+sagaMiddleware.run(skeduloSaga)
 
 ReactDOM.render(
+  <Provider store={store}>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
